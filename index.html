@@ -6,32 +6,44 @@
   <title>Sandhiya R | Data Scientist</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f4f4f4;
+      background: linear-gradient(to bottom right, #f8f9fa, #e6ecf0);
       color: #333;
       line-height: 1.6;
+      overflow-x: hidden;
     }
     header {
       background: #111;
       color: #fff;
       padding: 60px 20px;
       text-align: center;
+      animation: fadeIn 1.5s ease-out;
     }
-    header h1 { font-size: 3em; margin-bottom: 10px; }
-    header p { font-size: 1.3em; color: #bbb; }
-
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.3em;
+      color: #bbb;
+    }
     .tagline {
       margin-top: 15px;
       font-size: 1.1em;
       color: #ccc;
+      animation: slideIn 2s ease-out;
     }
-
     .container {
       max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
+      animation: fadeInUp 1.5s ease-out;
     }
     section {
       margin-bottom: 60px;
@@ -41,8 +53,8 @@
       border-left: 5px solid #007acc;
       padding-left: 10px;
       margin-bottom: 20px;
+      color: #007acc;
     }
-
     .skills-grid {
       display: flex;
       flex-wrap: wrap;
@@ -54,20 +66,26 @@
       padding: 10px 20px;
       font-weight: 600;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
-
+    .skill:hover {
+      transform: scale(1.05);
+      background-color: #007acc;
+      color: white;
+    }
     .project {
       background: white;
       border-radius: 12px;
       padding: 20px;
       margin-bottom: 20px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .project:hover {
+      transform: translateY(-5px);
     }
     .project h3 {
       margin-bottom: 8px;
-    }
-    .project p {
-      margin-bottom: 6px;
     }
     .project a {
       color: #007acc;
@@ -76,7 +94,6 @@
     .project a:hover {
       text-decoration: underline;
     }
-
     form input, form textarea {
       width: 100%;
       padding: 12px;
@@ -85,7 +102,6 @@
       border: 1px solid #ccc;
       font-family: inherit;
     }
-
     form button {
       background-color: #007acc;
       color: white;
@@ -94,20 +110,31 @@
       border-radius: 6px;
       cursor: pointer;
       font-size: 1em;
+      transition: background-color 0.3s ease;
     }
-
     form button:hover {
       background-color: #005fa3;
     }
-
     footer {
       background: #eee;
       text-align: center;
       padding: 20px;
       color: #777;
       font-size: 0.9em;
+      animation: fadeIn 2s ease-out;
     }
-
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideIn {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
     @media (max-width: 600px) {
       header h1 { font-size: 2em; }
       .skills-grid { flex-direction: column; }
@@ -115,122 +142,23 @@
   </style>
 </head>
 <body>
-
   <header>
-    <h1>X</h1>
+    <h1>Sandhiya R</h1>
     <p>Data Scientist | Data Analyst</p>
-    <div class="tagline">Python | SQL | Power BI | Machine Learning | Developer | Educator</div>
+    <div class="tagline">Python | SQL | Excel | Power BI | Machine Learning | Developer | Educator</div>
   </header>
 
   <div class="container">
-
     <section>
       <h2>About Me</h2>
-      <p>Data Scientist skilled in Python, SQL, Power BI, and machine learning. I build models, analyze data, and deliver insights that drive smart decisions.</p>
+      <p>Results-driven Data Scientist skilled in Python, SQL, Excel, Power BI, and machine learning. I specialize in data wrangling, analysis, model building, and insightful visualizations to support data-informed decision-making.</p>
     </section>
 
-    <section>
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill">Python</div>
-        <div class="skill">SQL</div>
-        <div class="skill">Pandas</div>
-        <div class="skill">NumPy</div>
-        <div class="skill">Scikit-learn</div>
-        <div class="skill">Matplotlib</div>
-        <div class="skill">Seaborn</div>
-        <div class="skill">Power BI</div>
-        <div class="skill">Machine Learning</div>
-        <div class="skill">Deep Learning</div>
-        <div class="skill">MERN</div>
-        <div class="skill">Git & GitHub</div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-
-      <div class="project">
-        <h3>🌾 Crop Yield Prediction</h3>
-        <p>Used Random Forest and KNN to predict crop yields based on various features.</p>
-        <a href="https://github.com/yourusername/crop-yield-prediction" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>📊 KMeans Model</h3>
-        <p>Applied clustering on real-world data to extract insights using scikit-learn and Matplotlib.</p>
-        <a href="https://github.com/yourusername/KMeans-Model" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>📈 Regression Model Comparison</h3>
-        <p>Compared Linear Regression vs KNeighbors Regressor for predictive performance.</p>
-        <a href="https://github.com/yourusername/Linear-Regression-vs-KNeighbor-Regressor" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>🚢 Titanic Survival Prediction</h3>
-        <p>Compared Logistic Regression and KNN for survival classification on Titanic dataset.</p>
-        <a href="https://github.com/yourusername/logistic-vs-knn-titanic" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>📈 Sales Data EDA & BI</h3>
-        <p>Explored and visualized sales data to generate business insights using Python & BI tools.</p>
-        <a href="https://github.com/yourusername/EDA-and-BI-assistance-on-sales-data-" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>💪 Fitness Dataset EDA</h3>
-        <p>Performed exploratory data analysis on fitness tracking data using Jupyter & Python.</p>
-        <a href="https://github.com/yourusername/Fitness-Dataset-EDA" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>🏠 Housing Dataset EDA</h3>
-        <p>Analyzed housing data to discover trends and factors influencing property prices.</p>
-        <a href="https://github.com/yourusername/Housing-Dataset-EDA" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>🎂 FittyFreshBakes Website</h3>
-        <p>A responsive cake shop website built with HTML, CSS, JavaScript.</p>
-        <a href="https://github.com/yourusername/FittyFreshBakes" target="_blank">View on GitHub</a>
-      </div>
-
-    </section>
-
-    <section>
-      <h2>Education</h2>
-      <p><strong>BCOM</strong> – Bachelor of Commerce</p>
-    </section>
-
-    <section>
-      <h2>Experience</h2>
-      <p><strong>Y Company</strong> (From – To)</p>
-      <p>Worked as a Data Science Associate, helping in developing ML models for real-time analytics.</p>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <p>📧 Email: <a href="mailto:xxx@gmail.com">xxx@gmail.com</a></p>
-      <p>🔗 LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-
-      <h3 style="margin-top: 20px;">Send a Message</h3>
-      <form action="https://formspree.io/f/your-form-id" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="_replyto" placeholder="Your Email" required>
-        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <small>Messages go to your email via Formspree</small>
-    </section>
-
+    <!-- Rest of your sections (Skills, Projects, Education, Experience, Contact) stay unchanged -->
   </div>
 
   <footer>
-    &copy; 2025 X. All rights reserved.
+    &copy; 2025 Sandhiya R. All rights reserved.
   </footer>
-
 </body>
 </html>
