@@ -2,185 +2,154 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sandhiya R - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sandhiya R - Data Scientist</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-light: #ffffff;
-      --bg-dark: #111111;
-      --text-light: #f4f4f4;
-      --text-dark: #1e1e1e;
-      --accent: #ff6f00;
-      --transition: all 0.3s ease;
-    }
-
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-dark);
-      transition: var(--transition);
-    }
-
-    body.dark-mode {
-      background-color: var(--bg-dark);
-      color: var(--text-light);
+      background: linear-gradient(to bottom right, #ffffff, #eef3f8);
+      color: #333;
+      overflow-x: hidden;
     }
 
     header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      padding: 60px 20px 30px;
-      background-color: var(--bg-light);
-      transition: var(--transition);
-    }
-
-    body.dark-mode header {
-      background-color: #1a1a1a;
+      padding: 80px 20px 40px;
+      background: #f8fafc;
     }
 
     header img {
-      width: 140px;
-      height: 140px;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
       border-radius: 50%;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
     }
 
     header h1 {
-      font-size: 2.5rem;
-      margin-top: 20px;
+      font-size: 2.8rem;
+      color: #111827;
     }
 
-    header p, .tagline {
-      color: var(--accent);
-      margin-top: 5px;
+    header p {
+      font-size: 1.2rem;
+      color: #4b5563;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #6b7280;
+      margin-top: 10px;
     }
 
     nav {
+      text-align: center;
       margin-top: 20px;
     }
 
     nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: var(--accent);
+      margin: 0 15px;
+      color: #0077cc;
       font-weight: 600;
+      text-decoration: none;
     }
 
-    .toggle-theme {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: var(--accent);
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: bold;
+    nav a:hover {
+      text-decoration: underline;
     }
 
     .container {
       max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    section {
-      margin-bottom: 60px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     h2 {
       font-size: 2rem;
+      border-left: 5px solid #007acc;
+      padding-left: 12px;
+      color: #007acc;
       margin-bottom: 20px;
-      border-left: 5px solid var(--accent);
-      padding-left: 10px;
     }
 
     .skills-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
     }
 
     .skill {
-      background-color: var(--accent);
-      color: white;
-      padding: 10px 16px;
+      background: #ffffff;
       border-radius: 8px;
-      font-weight: bold;
-      transition: var(--transition);
-      animation: fadeInUp 0.5s ease-in-out forwards;
+      padding: 10px 20px;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+
+    .skill:hover {
+      transform: scale(1.05);
+      background-color: #007acc;
+      color: white;
     }
 
     .project {
-      background: rgba(255, 111, 0, 0.05);
+      background: #ffffff;
+      border-radius: 12px;
       padding: 20px;
-      border-radius: 10px;
       margin-bottom: 20px;
-      transition: var(--transition);
-    }
-
-    body.dark-mode .project {
-      background: rgba(255, 111, 0, 0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     .project h3 {
-      color: var(--accent);
+      margin-bottom: 8px;
     }
 
     form input, form textarea {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 12px;
-      border: 1px solid #ccc;
+      padding: 12px;
+      margin: 8px 0;
       border-radius: 6px;
+      border: 1px solid #ccc;
     }
 
     form button {
-      background-color: var(--accent);
+      background-color: #007acc;
       color: white;
-      padding: 10px 20px;
       border: none;
+      padding: 12px 24px;
       border-radius: 6px;
       cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #005fa3;
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      font-size: 0.9rem;
       background-color: #f3f4f6;
-      transition: var(--transition);
-    }
-
-    body.dark-mode footer {
-      background-color: #1a1a1a;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        transform: translateY(20px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      color: #6b7280;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-  <button class="toggle-theme" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 
   <header>
-    <img src="profile.jpg" alt="Profile image">
+    <img src="1693116071537.jpg" alt="Profile Image" />
     <h1>Sandhiya R</h1>
     <p>Data Scientist</p>
     <div class="tagline">Python • SQL • Excel • Power BI • Machine Learning</div>
@@ -222,17 +191,42 @@
 
     <section id="projects">
       <h2>Projects</h2>
+
       <div class="project">
         <h3>🎂 FittyFreshBakes Website</h3>
         <p>A responsive cake shop website built using HTML, CSS, and JavaScript.</p>
         <a href="https://fitty-fresh-bakes-by-sandy.vercel.app" target="_blank">View website</a>
       </div>
+
       <div class="project">
         <h3>🌾 Crop Yield Prediction</h3>
         <p>Built a predictive model using Random Forest and KNN to forecast crop yields.</p>
         <a href="https://github.com/sandhiyaR99/crop-yield-prediction" target="_blank">View on GitHub</a>
       </div>
-      <!-- More projects here -->
+
+      <div class="project">
+        <h3>📈 Sales Data Analysis with BI assistance</h3>
+        <p>Conducted EDA and built BI dashboards to uncover sales insights.</p>
+        <a href="https://github.com/sandhiyaR99/EDA-and-BI-assistance" target="_blank">View on GitHub</a>
+      </div>
+
+      <div class="project">
+        <h3>📊 KMeans Clustering</h3>
+        <p>Clustered real-world datasets using scikit-learn and visualized insights with Matplotlib.</p>
+        <a href="https://github.com/sandhiyaR99/KMeans-Model" target="_blank">View on GitHub</a>
+      </div>
+
+      <div class="project">
+        <h3>📈 Regression Model Comparison</h3>
+        <p>Compared Linear Regression and KNeighbors Regressor for prediction accuracy.</p>
+        <a href="https://github.com/sandhiyaR99/Linear-Regression-vs-KNeighbor-Regressor" target="_blank">View on GitHub</a>
+      </div>
+
+      <div class="project">
+        <h3>🚢 Titanic Survival Prediction</h3>
+        <p>Used Logistic Regression and KNN to classify passenger survival probabilities.</p>
+        <a href="https://github.com/sandhiyaR99/logistic-vs-knn-titanic" target="_blank">View on GitHub</a>
+      </div>
     </section>
 
     <section id="education">
@@ -246,20 +240,22 @@
       <h2>Experience</h2>
       <p><strong>Amazon</strong> (2022 – 2025)</p>
       <p>SPS Associate</p>
-      <p>Handled product catalog management, ensuring data accuracy and consistency. Conducted audits, collaborated with teams for resolution, and maintained SLA targets in a dynamic environment.</p>
+      <p>Handled product catalog management, ensuring data accuracy, completeness, and consistency across listings. Conducted regular audits to identify and correct discrepancies, maintaining high data quality standards. Collaborated with cross-functional teams for issue resolution, process improvements, and SLA adherence. Demonstrated strong attention to detail, operational efficiency, and clear communication in a dynamic environment.</p>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <p>📧 Email: <a href="mailto:xxx@gmail.com">xxx@gmail.com</a></p>
       <p>🔗 LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-      <h3>Send a Message</h3>
+
+      <h3 style="margin-top: 20px;">Send a Message</h3>
       <form action="https://formspree.io/f/your-form-id" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="_replyto" placeholder="Your Email" required>
         <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
+      <small>Messages are securely sent</small>
     </section>
   </main>
 
@@ -267,10 +263,5 @@
     &copy; 2025 Sandhiya R. All rights reserved.
   </footer>
 
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-  </script>
 </body>
 </html>
