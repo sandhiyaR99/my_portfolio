@@ -3,9 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sandhiya R </title>
+  <title>Sandhiya R</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
+    :root {
+      --bg: #ffffff;
+      --text: #333333;
+      --accent: #007acc;
+      --card-bg: #ffffff;
+      --nav-bg: #f8fafc;
+      --footer-bg: #f3f4f6;
+    }
+
+    body.dark {
+      --bg: #111827;
+      --text: #f3f4f6;
+      --accent: #38bdf8;
+      --card-bg: #1f2937;
+      --nav-bg: #1e293b;
+      --footer-bg: #0f172a;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -14,42 +34,64 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom right, #f9fbfc, #e2eaf3);
-      color: #333;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
     }
 
     header {
-      background: #0b0c10;
-      color: white;
-      padding: 60px 20px;
+      background: var(--nav-bg);
       text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    header img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
     }
 
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.4rem;
-      color: #ccc;
+      font-size: 2.8rem;
+      color: var(--text);
     }
 
     .tagline {
+      font-size: 1rem;
+      color: #6b7280;
       margin-top: 10px;
-      font-size: 1.1rem;
-      color: #aaa;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .dark-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 1000;
+      font-weight: bold;
     }
 
     .container {
@@ -58,26 +100,22 @@
       padding: 0 20px;
     }
 
-    section {
-      margin-bottom: 60px;
-    }
-
     h2 {
       font-size: 2rem;
-      border-left: 5px solid #007acc;
-      padding-left: 10px;
-      color: #007acc;
+      border-left: 5px solid var(--accent);
+      padding-left: 12px;
+      color: var(--accent);
       margin-bottom: 20px;
     }
 
     .skills-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
     }
 
     .skill {
-      background: #fff;
+      background: var(--card-bg);
       border-radius: 8px;
       padding: 10px 20px;
       font-weight: 600;
@@ -87,26 +125,21 @@
 
     .skill:hover {
       transform: scale(1.05);
-      background-color: #007acc;
+      background-color: var(--accent);
       color: white;
     }
 
     .project {
-      background: #fff;
+      background: var(--card-bg);
       border-radius: 12px;
       padding: 20px;
       margin-bottom: 20px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-4px);
+      transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
     .project h3 {
       margin-bottom: 8px;
-      font-size: 1.3rem;
     }
 
     form input, form textarea {
@@ -115,17 +148,15 @@
       margin: 8px 0;
       border-radius: 6px;
       border: 1px solid #ccc;
-      font-family: inherit;
     }
 
     form button {
-      background-color: #007acc;
+      background-color: var(--accent);
       color: white;
       border: none;
       padding: 12px 24px;
       border-radius: 6px;
       cursor: pointer;
-      font-size: 1em;
     }
 
     form button:hover {
@@ -133,32 +164,37 @@
     }
 
     footer {
-      background: #f0f0f0;
       text-align: center;
       padding: 20px;
-      color: #777;
+      background-color: var(--footer-bg);
+      color: #9ca3af;
       font-size: 0.9em;
-    }
-
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      .skills-grid { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
   <header>
+    <img src="profile.jpg" alt="Profile Image" />
     <h1>Sandhiya R</h1>
     <p>Data Scientist</p>
-    <div class="tagline">Python • SQL • Excel • Power BI • Machine Learning </div>
+    <div class="tagline">Python • SQL • Excel • Power BI • Machine Learning</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <main class="container">
-
     <section id="about">
       <h2>About Me</h2>
-      <p>Data Scientist with freelance experience in Python, SQL, Power BI, and Advanced Excel. Proficient in data analysis, visualization, and automation using Pandas, Matplotlib, and Seaborn. Experienced in building Machine Learning models with scikit-learn and TensorFlow, and applying Generative AI techniques to enhance data-driven solutions and intelligent automation.</p>
+      <p>Data Scientist with freelance experience in Python, SQL, Power BI, and Advanced Excel...</p>
     </section>
 
     <section id="skills">
@@ -167,73 +203,38 @@
         <div class="skill">Python</div>
         <div class="skill">SQL</div>
         <div class="skill">Pandas</div>
-        <div class="skill">NumPy</div>
-        <div class="skill">Scikit-learn</div>
-        <div class="skill">TensorFlow</div>
-        <div class="skill">Matplotlib</div>
-        <div class="skill">Seaborn</div>
-        <div class="skill">Power BI</div>
-        <div class="skill">Machine Learning</div>
-        <div class="skill">GenAI</div>
-        <div class="skill">Deep Learning</div>
-        <div class="skill">MERN Stack</div>
-        <div class="skill">Git & GitHub</div>
+        <!-- Add all your skills here -->
       </div>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
 
-      <div class="project">
+      <div class="project" data-aos="fade-up">
         <h3>🎂 FittyFreshBakes Website</h3>
-        <p>A responsive cake shop website built using HTML, CSS, and JavaScript.</p>
-        <a href="fitty-fresh-bakes-by-sandy.vercel.app" target="_blank">View website</a>
+        <p>A responsive cake shop website...</p>
+        <a href="https://fitty-fresh-bakes-by-sandy.vercel.app" target="_blank">View website</a>
       </div>
 
-      <div class="project">
+      <div class="project" data-aos="fade-up" data-aos-delay="100">
         <h3>🌾 Crop Yield Prediction</h3>
-        <p>Built a predictive model using Random Forest and KNN to forecast crop yields.</p>
+        <p>Built a predictive model using Random Forest and KNN...</p>
         <a href="https://github.com/sandhiyaR99/crop-yield-prediction" target="_blank">View on GitHub</a>
       </div>
 
-      <div class="project">
-        <h3>📈 Sales Data Analysis with BI assistance</h3>
-        <p>Conducted EDA and built BI dashboards to uncover sales insights.</p>
-        <a href="https://github.com/sandhiyaR99/EDA-and-BI-assistance" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>📊 KMeans Clustering</h3>
-        <p>Clustered real-world datasets using scikit-learn and visualized insights with Matplotlib.</p>
-        <a href="https://github.com/sandhiyaR99/KMeans-Model" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>📈 Regression Model Comparison</h3>
-        <p>Compared Linear Regression and KNeighbors Regressor for prediction accuracy.</p>
-        <a href="https://github.com/sandhiyaR99/Linear-Regression-vs-KNeighbor-Regressor" target="_blank">View on GitHub</a>
-      </div>
-
-      <div class="project">
-        <h3>🚢 Titanic Survival Prediction</h3>
-        <p>Used Logistic Regression and KNN to classify passenger survival probabilities.</p>
-        <a href="https://github.com/sandhiyaR99/logistic-vs-knn-titanic" target="_blank">View on GitHub</a>
-      </div>
-      
+      <!-- Add other projects with similar data-aos -->
     </section>
 
     <section id="education">
       <h2>Education</h2>
       <p><strong>B.E. in Electronics and Communication Engineering</strong></p>
-      <p>Jansons institute of technology</p>
-      <p>CGPA: 8.4 | Graduated: 2020</p>
-     </section>
+      <p>Jansons Institute of Technology | CGPA: 8.4 | 2020</p>
+    </section>
 
     <section id="experience">
       <h2>Experience</h2>
       <p><strong>Amazon</strong> (2022 – 2025)</p>
-      <p>SPS Associate</p>
-      <p>Handled product catalog management, ensuring data accuracy, completeness, and consistency across listings. Conducted regular audits to identify and correct discrepancies, maintaining high data quality standards. Collaborated with cross-functional teams for issue resolution, process improvements, and SLA adherence. Demonstrated strong attention to detail, operational efficiency, and clear communication in a dynamic environment.</p>
+      <p>SPS Associate | Catalog Management | SLA Monitoring | Process Optimization</p>
     </section>
 
     <section id="contact">
@@ -241,14 +242,12 @@
       <p>📧 Email: <a href="mailto:xxx@gmail.com">xxx@gmail.com</a></p>
       <p>🔗 LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
 
-      <h3 style="margin-top: 20px;">Send a Message</h3>
       <form action="https://formspree.io/f/your-form-id" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="_replyto" placeholder="Your Email" required>
         <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
-      <small>Messages are securely sent</small>
     </section>
   </main>
 
@@ -256,5 +255,16 @@
     &copy; 2025 Sandhiya R. All rights reserved.
   </footer>
 
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
 </body>
 </html>
