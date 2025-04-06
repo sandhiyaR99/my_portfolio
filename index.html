@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sandhiya R | Data Scientist</title>
+  <title>Sandhiya R | Data Scientist Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     * {
@@ -11,89 +11,104 @@
       margin: 0;
       padding: 0;
     }
+
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom right, #f8f9fa, #e6ecf0);
+      background: linear-gradient(to bottom right, #f9fbfc, #e2eaf3);
       color: #333;
       line-height: 1.6;
       overflow-x: hidden;
     }
+
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     header {
-      background: #111;
-      color: #fff;
+      background: #0b0c10;
+      color: white;
       padding: 60px 20px;
       text-align: center;
-      animation: fadeIn 1.5s ease-out;
     }
+
     header h1 {
-      font-size: 3em;
+      font-size: 3rem;
       margin-bottom: 10px;
     }
+
     header p {
-      font-size: 1.3em;
-      color: #bbb;
-    }
-    .tagline {
-      margin-top: 15px;
-      font-size: 1.1em;
+      font-size: 1.4rem;
       color: #ccc;
-      animation: slideIn 2s ease-out;
     }
+
+    .tagline {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #aaa;
+    }
+
     .container {
       max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
-      animation: fadeInUp 1.5s ease-out;
     }
+
     section {
       margin-bottom: 60px;
     }
+
     h2 {
-      font-size: 2em;
+      font-size: 2rem;
       border-left: 5px solid #007acc;
       padding-left: 10px;
-      margin-bottom: 20px;
       color: #007acc;
+      margin-bottom: 20px;
     }
+
     .skills-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
+
     .skill {
       background: #fff;
       border-radius: 8px;
       padding: 10px 20px;
       font-weight: 600;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
     }
+
     .skill:hover {
       transform: scale(1.05);
       background-color: #007acc;
       color: white;
     }
+
     .project {
-      background: white;
+      background: #fff;
       border-radius: 12px;
       padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       transition: transform 0.3s ease;
     }
+
     .project:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
     }
+
     .project h3 {
       margin-bottom: 8px;
+      font-size: 1.3rem;
     }
-    .project a {
-      color: #007acc;
-      text-decoration: none;
-    }
-    .project a:hover {
-      text-decoration: underline;
-    }
+
     form input, form textarea {
       width: 100%;
       padding: 12px;
@@ -102,6 +117,7 @@
       border: 1px solid #ccc;
       font-family: inherit;
     }
+
     form button {
       background-color: #007acc;
       color: white;
@@ -110,51 +126,42 @@
       border-radius: 6px;
       cursor: pointer;
       font-size: 1em;
-      transition: background-color 0.3s ease;
     }
+
     form button:hover {
       background-color: #005fa3;
     }
+
     footer {
-      background: #eee;
+      background: #f0f0f0;
       text-align: center;
       padding: 20px;
       color: #777;
       font-size: 0.9em;
-      animation: fadeIn 2s ease-out;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideIn {
-      from { transform: translateX(-50px); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes fadeInUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
+
     @media (max-width: 600px) {
-      header h1 { font-size: 2em; }
+      header h1 { font-size: 2rem; }
       .skills-grid { flex-direction: column; }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Sandhiya R</h1>
     <p>Data Scientist | Data Analyst</p>
-    <div class="tagline">Python | SQL | Excel | Power BI | Machine Learning | Developer | Educator</div>
+    <div class="tagline">Python • SQL • Excel • Power BI • Machine Learning • Educator</div>
   </header>
 
-  <div class="container">
-    <section>
+  <main class="container">
+
+    <section id="about">
       <h2>About Me</h2>
-      <p>Results-driven Data Scientist skilled in Python, SQL, Excel, Power BI, and machine learning. I specialize in data wrangling, analysis, model building, and insightful visualizations to support data-informed decision-making.</p>
+      <p>I'm a results-driven Data Scientist with expertise in Python, SQL, Excel, Power BI, and machine learning. I excel in transforming data into actionable insights through analysis, visualization, and model development.</p>
     </section>
 
-   <section>
+    <section id="skills">
       <h2>Skills</h2>
       <div class="skills-grid">
         <div class="skill">Python</div>
@@ -167,76 +174,75 @@
         <div class="skill">Power BI</div>
         <div class="skill">Machine Learning</div>
         <div class="skill">Deep Learning</div>
-        <div class="skill">MERN</div>
+        <div class="skill">MERN Stack</div>
         <div class="skill">Git & GitHub</div>
       </div>
     </section>
 
-    <section>
+    <section id="projects">
       <h2>Projects</h2>
 
       <div class="project">
         <h3>🌾 Crop Yield Prediction</h3>
-        <p>Used Random Forest and KNN to predict crop yields based on various features.</p>
+        <p>Built a predictive model using Random Forest and KNN to forecast crop yields.</p>
         <a href="https://github.com/yourusername/crop-yield-prediction" target="_blank">View on GitHub</a>
       </div>
 
       <div class="project">
-        <h3>📊 KMeans Model</h3>
-        <p>Applied clustering on real-world data to extract insights using scikit-learn and Matplotlib.</p>
+        <h3>📊 KMeans Clustering</h3>
+        <p>Clustered real-world datasets using scikit-learn and visualized insights with Matplotlib.</p>
         <a href="https://github.com/yourusername/KMeans-Model" target="_blank">View on GitHub</a>
       </div>
 
       <div class="project">
         <h3>📈 Regression Model Comparison</h3>
-        <p>Compared Linear Regression vs KNeighbors Regressor for predictive performance.</p>
+        <p>Compared Linear Regression and KNeighbors Regressor for prediction accuracy.</p>
         <a href="https://github.com/yourusername/Linear-Regression-vs-KNeighbor-Regressor" target="_blank">View on GitHub</a>
       </div>
 
       <div class="project">
         <h3>🚢 Titanic Survival Prediction</h3>
-        <p>Compared Logistic Regression and KNN for survival classification on Titanic dataset.</p>
+        <p>Used Logistic Regression and KNN to classify passenger survival probabilities.</p>
         <a href="https://github.com/yourusername/logistic-vs-knn-titanic" target="_blank">View on GitHub</a>
       </div>
 
       <div class="project">
-        <h3>📈 Sales Data EDA & BI</h3>
-        <p>Explored and visualized sales data to generate business insights using Python & BI tools.</p>
+        <h3>📈 Sales Data Analysis</h3>
+        <p>Conducted EDA and built BI dashboards to uncover sales insights.</p>
         <a href="https://github.com/yourusername/EDA-and-BI-assistance-on-sales-data-" target="_blank">View on GitHub</a>
       </div>
 
       <div class="project">
         <h3>💪 Fitness Dataset EDA</h3>
-        <p>Performed exploratory data analysis on fitness tracking data using Jupyter & Python.</p>
+        <p>Exploratory analysis on fitness tracking data to identify user activity trends.</p>
         <a href="https://github.com/yourusername/Fitness-Dataset-EDA" target="_blank">View on GitHub</a>
       </div>
 
       <div class="project">
         <h3>🏠 Housing Dataset EDA</h3>
-        <p>Analyzed housing data to discover trends and factors influencing property prices.</p>
+        <p>Analyzed real estate data to determine key factors affecting pricing.</p>
         <a href="https://github.com/yourusername/Housing-Dataset-EDA" target="_blank">View on GitHub</a>
       </div>
 
       <div class="project">
         <h3>🎂 FittyFreshBakes Website</h3>
-        <p>A responsive cake shop website built with HTML, CSS, JavaScript.</p>
+        <p>A responsive cake shop website built using HTML, CSS, and JavaScript.</p>
         <a href="https://github.com/yourusername/FittyFreshBakes" target="_blank">View on GitHub</a>
       </div>
-
     </section>
 
-    <section>
+    <section id="education">
       <h2>Education</h2>
-      <p><strong>BCOM</strong> – Bachelor of Commerce</p>
+      <p><strong>Bachelor of Commerce (BCom)</strong></p>
     </section>
 
-    <section>
+    <section id="experience">
       <h2>Experience</h2>
       <p><strong>Y Company</strong> (From – To)</p>
-      <p>Worked as a Data Science Associate, helping in developing ML models for real-time analytics.</p>
+      <p>Worked as a Data Science Associate building machine learning models for real-time analytics.</p>
     </section>
 
-    <section>
+    <section id="contact">
       <h2>Contact</h2>
       <p>📧 Email: <a href="mailto:xxx@gmail.com">xxx@gmail.com</a></p>
       <p>🔗 LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
@@ -248,12 +254,13 @@
         <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
-      <small>Messages go to your email via Formspree</small>
+      <small>Messages are securely sent via Formspree</small>
     </section>
-  </div>
+  </main>
 
   <footer>
     &copy; 2025 Sandhiya R. All rights reserved.
   </footer>
+
 </body>
 </html>
