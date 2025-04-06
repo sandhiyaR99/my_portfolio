@@ -3,27 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sandhiya R</title>
+  <title>Sandhiya R - Data Scientist Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     :root {
       --bg: #ffffff;
-      --text: #333333;
-      --accent: #007acc;
-      --card-bg: #ffffff;
-      --nav-bg: #f8fafc;
-      --footer-bg: #f3f4f6;
+      --text: #1e293b;
+      --accent: #0ea5e9;
+      --accent-hover: #0284c7;
+      --card-bg: #f1f5f9;
+      --nav-bg: #ffffff;
+      --footer-bg: #e2e8f0;
     }
 
     body.dark {
-      --bg: #111827;
-      --text: #f3f4f6;
+      --bg: #0f172a;
+      --text: #f8fafc;
       --accent: #38bdf8;
-      --card-bg: #1f2937;
+      --accent-hover: #0ea5e9;
+      --card-bg: #1e293b;
       --nav-bg: #1e293b;
-      --footer-bg: #0f172a;
+      --footer-bg: #1e293b;
     }
 
     * {
@@ -34,43 +35,43 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
+      background-color: var(--bg);
       color: var(--text);
-      transition: background 0.3s, color 0.3s;
+      line-height: 1.6;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     header {
       background: var(--nav-bg);
       text-align: center;
-      padding: 80px 20px 40px;
+      padding: 4rem 1rem 2rem;
     }
 
     header img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     header h1 {
-      font-size: 2.8rem;
-      color: var(--text);
+      font-size: 2.4rem;
+      margin-top: 1rem;
     }
 
     .tagline {
+      color: #64748b;
       font-size: 1rem;
-      color: #6b7280;
-      margin-top: 10px;
+      margin-top: 0.5rem;
     }
 
     nav {
-      margin-top: 20px;
+      margin-top: 1rem;
     }
 
     nav a {
-      margin: 0 15px;
+      margin: 0 1rem;
       color: var(--accent);
       font-weight: 600;
       text-decoration: none;
@@ -82,105 +83,109 @@
 
     .dark-toggle {
       position: fixed;
-      top: 20px;
-      right: 20px;
+      top: 1rem;
+      right: 1rem;
       background: var(--accent);
       color: white;
-      padding: 10px 16px;
       border: none;
-      border-radius: 6px;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
       cursor: pointer;
-      z-index: 1000;
       font-weight: bold;
+      z-index: 1000;
     }
 
     .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
     }
 
     h2 {
-      font-size: 2rem;
-      border-left: 5px solid var(--accent);
-      padding-left: 12px;
-      color: var(--accent);
-      margin-bottom: 20px;
+      font-size: 1.8rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 0.75rem;
+      margin-bottom: 1.5rem;
     }
 
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .skills-grid,
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
     }
 
-    .skill {
+    .skill, .project {
       background: var(--card-bg);
-      border-radius: 8px;
-      padding: 10px 20px;
-      font-weight: 600;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      transition: all 0.3s ease;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, background 0.3s ease;
     }
 
     .skill:hover {
-      transform: scale(1.05);
-      background-color: var(--accent);
-      color: white;
-    }
-
-    .project {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-5px);
     }
 
     .project h3 {
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    .project a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .project a:hover {
+      color: var(--accent-hover);
     }
 
     form input, form textarea {
       width: 100%;
-      padding: 12px;
-      margin: 8px 0;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
       border-radius: 6px;
       border: 1px solid #ccc;
     }
 
     form button {
-      background-color: var(--accent);
+      background: var(--accent);
       color: white;
+      padding: 0.75rem 1.5rem;
       border: none;
-      padding: 12px 24px;
       border-radius: 6px;
       cursor: pointer;
+      font-weight: bold;
     }
 
     form button:hover {
-      background-color: #005fa3;
+      background: var(--accent-hover);
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background-color: var(--footer-bg);
-      color: #9ca3af;
-      font-size: 0.9em;
+      padding: 1.5rem 0;
+      background: var(--footer-bg);
+      color: #6b7280;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
-  <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+  <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
 
   <header>
-    <img src="1693116071537.jpg" alt="Profile Image" />
+    <img src="1693116071537.jpg" alt="Sandhiya R">
     <h1>Sandhiya R</h1>
-    <p>Data Scientist</p>
-    <div class="tagline">Python • SQL • Excel • Power BI • Machine Learning</div>
+    <p class="tagline">Data Scientist | Python • SQL • Excel • Power BI • Machine Learning</p>
     <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -194,7 +199,7 @@
   <main class="container">
     <section id="about">
       <h2>About Me</h2>
-      <p>Data Scientist with freelance experience in Python, SQL, Power BI, and Advanced Excel...</p>
+      <p>Data Scientist with freelance experience in Python, SQL, Power BI, and Advanced Excel. Passionate about deriving actionable insights from data and delivering data-driven solutions.</p>
     </section>
 
     <section id="skills">
@@ -203,26 +208,29 @@
         <div class="skill">Python</div>
         <div class="skill">SQL</div>
         <div class="skill">Pandas</div>
-        <!-- Add all your skills here -->
+        <div class="skill">Power BI</div>
+        <div class="skill">Excel</div>
+        <div class="skill">Scikit-learn</div>
+        <div class="skill">Matplotlib</div>
+        <div class="skill">Data Cleaning</div>
+        <div class="skill">Machine Learning</div>
       </div>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-
-      <div class="project" data-aos="fade-up">
-        <h3>🎂 FittyFreshBakes Website</h3>
-        <p>A responsive cake shop website...</p>
-        <a href="https://fitty-fresh-bakes-by-sandy.vercel.app" target="_blank">View website</a>
+      <div class="projects-grid">
+        <div class="project" data-aos="fade-up">
+          <h3>🎂 FittyFreshBakes Website</h3>
+          <p>A responsive cake shop website built using HTML, CSS, and JavaScript.</p>
+          <a href="https://fitty-fresh-bakes-by-sandy.vercel.app" target="_blank">View Website</a>
+        </div>
+        <div class="project" data-aos="fade-up" data-aos-delay="100">
+          <h3>🌾 Crop Yield Prediction</h3>
+          <p>Developed a model using Random Forest and KNN to predict crop yields.</p>
+          <a href="https://github.com/sandhiyaR99/crop-yield-prediction" target="_blank">View on GitHub</a>
+        </div>
       </div>
-
-      <div class="project" data-aos="fade-up" data-aos-delay="100">
-        <h3>🌾 Crop Yield Prediction</h3>
-        <p>Built a predictive model using Random Forest and KNN...</p>
-        <a href="https://github.com/sandhiyaR99/crop-yield-prediction" target="_blank">View on GitHub</a>
-      </div>
-
-      <!-- Add other projects with similar data-aos -->
     </section>
 
     <section id="education">
@@ -239,13 +247,12 @@
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>📧 Email: <a href="mailto:xxx@gmail.com">xxx@gmail.com</a></p>
-      <p>🔗 LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-
+      <p>📧 <a href="mailto:xxx@gmail.com">xxx@gmail.com</a></p>
+      <p>🔗 <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
       <form action="https://formspree.io/f/your-form-id" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="_replyto" placeholder="Your Email" required>
-        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
     </section>
@@ -255,6 +262,7 @@
     &copy; 2025 Sandhiya R. All rights reserved.
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     function toggleDarkMode() {
       document.body.classList.toggle('dark');
